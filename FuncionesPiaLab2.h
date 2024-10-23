@@ -1,5 +1,5 @@
-#ifndef FUNCIONESPIALAB2_H_INCLUDED
-#define FUNCIONESPIALAB2_H_INCLUDED
+#ifndef FUNCIONESPIALAB_H_INCLUDED
+#define FUNCIONESPIALAB_H_INCLUDED
 
 /*Variable global de cantidad total de registros*/
 int n;
@@ -452,4 +452,4 @@ void menuEdicion(){
 
 
 
-#endif // FUNCIONESPIALAB2_H_INCLUDED
+#endif // FUNCIONESPIALAB_H_INCLUDED
