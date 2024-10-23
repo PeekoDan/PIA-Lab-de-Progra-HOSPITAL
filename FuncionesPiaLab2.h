@@ -41,9 +41,10 @@ int numPacientes(){
 
 /*La funcion lee un dato del paciente y lo almacena en un buffer*/
 void solicitud_dato(int opc_dat, char *buffer){
-	int opc,edad,cons;
+	int opc,edad,cons,mes,dia;
 	char gen;
-
+	char meses[4],dias[4];
+	
 	/*Determinamos el dato a solicitar con un switch*/
 	switch(opc_dat){
 		case 1:
@@ -56,8 +57,8 @@ void solicitud_dato(int opc_dat, char *buffer){
 				scanf("%d",&opc);
 				if(opc!=1&&opc!=2) printf("\n*Error - Clave invalida. Ingrese de nuevo.*");
 			}while(opc!=1&&opc!=2);
-
-			/*Dependiendo de la opcion elegida, almacenamos el tipo de servicio en buffer*/
+			
+			/*Dependiendo de la opcion elegida, almacenamos el tipo de servicio en buffer*/ 
 			if(opc == 1) strcpy(buffer,"Consulta externa");
 			else strcpy(buffer,"Emergencia");
 			break;
@@ -74,14 +75,57 @@ void solicitud_dato(int opc_dat, char *buffer){
 			scanf("%[^\n]",buffer);
 			break;
 		case 4:
-			/*Solicitamos la edad y la validamos*/
+			/*Solicitamos la edad en anios y la validamos*/
 			do{
-				printf("\nIngrese su edad: ");
+				printf("\nIngrese su edad (en anios): ");
 				scanf("%d",&edad);
-				if(edad<1) printf("\n*Error - Edad invalida. Ingrese de nuevo.*");
-			}while(edad<1);
-			/*Almacenamos el numero como cadena en buffer*/
-			sprintf(buffer, "%d", edad);
+				if(edad < 0) printf("\n*Error - Edad invalida. Ingrese de nuevo.*");
+			}while(edad<0);
+			
+			/*Agregamos la edad en anios del paciente al buffer*/
+			if(edad){
+				sprintf(buffer, "%d", edad);
+				strcat(buffer, " anio(s) ");
+			}
+			
+			/*Si el paciente es un bebe (0-2 anios), solicitamos sus meses y dias de edad*/
+			if(edad >= 0&&edad <= 2){
+				/*Solicitamos los meses de edad y los validamos*/
+				do{
+					printf("\nIngrese los meses del bebe (0-11): ");
+					scanf("%d",&mes);
+					if(mes<0||mes>11) printf("\n*Error - Edad invalida. Ingrese de nuevo.*");
+				}while(mes<0||mes>11);
+				
+				/*Agregamos los meses de edad a la cadena meses*/
+				sprintf(meses, "%d", mes);
+				
+				/*Si se dio una cantidad de meses distinta de cero, esta se concatena al buffer
+				o se inicializa el buffer con esta cantidad, segun sea el caso*/
+				if(mes){
+					if(!edad) sprintf(buffer, "%d", mes);
+					else strcat(buffer, meses);
+					strcat(buffer, " mes(es) ");
+				}
+				
+				/*Solicitamos los dias de edad y los validamos*/
+				do{
+					printf("\nIngrese los dias del bebe (0-30): ");
+					scanf("%d",&dia);
+					if(dia<0||dia>30) printf("\n*Error - Edad invalida. Ingrese de nuevo.*");
+				}while(dia<0||dia>30);
+				
+				/*Agregamos los dias de edad a la cadena dias*/
+				sprintf(dias, "%d", dia);
+				
+				/*Si se dio una cantidad de dias distinta de cero, esta se concatena al buffer
+				o se inicializa el buffer con esta cantidad, segun sea el caso*/
+				if(dia){
+					if(!edad&&!mes) sprintf(buffer, "%d", dia);
+					else strcat(buffer, dias);
+					strcat(buffer, " dia(s) ");
+				}
+			}
 			break;
 		case 5:
 			/*Solicitamos el genero y validamos que la opcion sea correcta*/
@@ -89,9 +133,10 @@ void solicitud_dato(int opc_dat, char *buffer){
 				fflush(stdin);
 				printf("\nIngrese su genero (H - Hombre, M - Mujer, O - Otro): ");
 				scanf("%c",&gen);
+				gen = toupper(gen);
 				if(gen!='H'&&gen!='M'&&gen!='O') printf("\n*Error - Caracter invalido. Ingrese de nuevo.*");
 			}while(gen!='H'&&gen!='M'&&gen!='O');
-
+			
 			/*Dependiendo de la opcion elegida, almacenamos el genero en buffer*/
 			if(gen == 'H') strcpy(buffer,"Hombre");
 			else if(gen == 'M') strcpy(buffer,"Mujer");
@@ -316,7 +361,7 @@ int editar(int opc_edc, int numR, char *nueva_linea){
     /*Leemos el archivo completo y almacenamos todas las lineas*/
     while(i < n*9){
     	fgets(buffer, sizeof(buffer), arch);
-        lineas[i] = strdup(buffer); // Duplica la línea y la almacena
+        lineas[i] = strdup(buffer); // Duplica la lÃ­nea y la almacena
         i++;
     }
 
