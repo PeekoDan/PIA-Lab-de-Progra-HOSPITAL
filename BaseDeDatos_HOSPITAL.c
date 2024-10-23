@@ -108,7 +108,7 @@ int main(){
 				/*Pedimos el nuevo dato y lo almacenamos en buffer*/
 				solicitud_dato(opc,buffer);
 
-				/*Le añadimos el caracter de fin de cadena*/
+				/*Le aÃ±adimos el caracter de fin de cadena*/
 				strcat(buffer,"\n");
 
 				/*Si el nuevo dato es exactamente igual al antiguo, se notifica*/
