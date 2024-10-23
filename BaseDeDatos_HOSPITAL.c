@@ -4,7 +4,7 @@
 #include <string.h>
 
 /*Nuestras funciones creadas para usar aqui*/
-#include "FuncionesPiaLab2.h"
+#include "FuncionesPiaLab.h"
 
 /* SE INCLUYE UNA VARIABLE GLOBAL DE ESTA PREVIA LIBRERIA*/
 /* INT n;
