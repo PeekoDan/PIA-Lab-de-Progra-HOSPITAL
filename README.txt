@@ -1,5 +1,4 @@
 # PIA-Lab-de-Progra
-Aqui se guarda el codigo elaborado entre todos del PIA del LAB de PROGRA
 
 
 EN CASO DE QUE NO EXISTA EL ARCHIVO .EXE EN ESTA CARPETA
