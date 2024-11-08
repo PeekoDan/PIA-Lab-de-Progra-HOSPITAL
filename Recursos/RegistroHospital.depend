@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1731012866 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\recursosproyecto.rc
+
+1731012847 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesPiaLab.h"
+
+1731012948 c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\funcionespialab.h
+
+1731075080 source:c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\recursosproyecto.rc
+
+1731075579 source:c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesPiaLab.h"
+
+1731075579 c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\funcionespialab.h
+
