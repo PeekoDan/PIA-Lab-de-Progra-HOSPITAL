@@ -14,6 +14,12 @@
 
 int main(){
     checarEnRecursos();
+     /*Establecemos el idioma a español con las librerías locale.h y windows.h
+    setLocale es para linux y SetConsole es para Windows. */
+    setlocale(LC_ALL, "spanish");
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+	
 	mkdir("Datos");
 	/*Se crea la carpeta donde se guarda la información*/
 	int opc, i, numR, res;
