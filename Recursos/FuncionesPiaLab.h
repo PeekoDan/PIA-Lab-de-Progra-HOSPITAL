@@ -31,16 +31,16 @@ int minmaxInt(char itxt[], int imin, int imax){
             si entra aqui es porque hubo una coincidencia, entonces
             ahora se tiene que validar que este entre el maximo y el minimo.*/
             if(iinp<imin && imin!=-1){
-                printf("\nError. Debe ser minimo %d. Vuelva a intentar.\n",imin);
+                printf("\nError. Debe ser mínimo %d. Vuelva a intentar.\n",imin);
                 ivalid=0;
             }
             if(iinp>imax && imax!=-1){
-                printf("\nError. Debe ser maximo %d. Vuelva a intentar.\n",imax);
+                printf("\nError. Debe ser máximo %d. Vuelva a intentar.\n",imax);
                 ivalid=0;
             }
         }
         else{
-            printf("\nParece que no ingreso un numero. Vuelva a intentar.\n");
+            printf("\nParece que no ingresó un número. Vuelva a intentar.\n");
             ivalid=0;
         }
     }while(ivalid==0);
@@ -93,7 +93,7 @@ void solicitud_dato(int opc_dat, char *buffer){
 	switch(opc_dat){
 		case 1:
 			/*Solicitamos el tipo de servicio mediante un menu y validamos que exista la opcion*/
-			printf("\nA partir del siguiente menu, indica el tipo de servicio: ");
+			printf("\nA partir del siguiente menú, indica el tipo de servicio: ");
 			printf("\n1.- Consulta externa");
 			printf("\n2.- Emergencia");
 
@@ -118,7 +118,7 @@ void solicitud_dato(int opc_dat, char *buffer){
 			break;
 		case 4:
 			/*Solicitamos la edad en anios y la validamos con minmaxInt*/
-			edad = minmaxInt("\nIngrese su edad (en anios): ", 0, NOLIM);
+			edad = minmaxInt("\nIngrese su edad (en años): ", 0, NOLIM);
 
 			/*Agregamos la edad en anios del paciente al buffer*/
 			if(edad){
@@ -129,7 +129,7 @@ void solicitud_dato(int opc_dat, char *buffer){
 			/*Si el paciente es un bebe (0-2 anios), solicitamos sus meses y dias de edad*/
 			if(edad >= 0 && edad <= 2){
 				/*Solicitamos los meses de edad y los validamos*/
-				mes = minmaxInt("\nIngrese los meses del bebe (0-11): ", 0, 11);
+				mes = minmaxInt("\nIngrese los meses del bebé (0-11): ", 0, 11);
 
 				/*Agregamos los meses de edad a la cadena meses*/
 				sprintf(meses, "%d", mes);
@@ -161,11 +161,11 @@ void solicitud_dato(int opc_dat, char *buffer){
 			/*Solicitamos el genero y validamos que la opcion sea correcta*/
 			do{
 				fflush(stdin);
-				printf("\nIngrese su genero (H - Hombre, M - Mujer, O - Otro): ");
+				printf("\nIngrese su género (H - Hombre, M - Mujer, O - Otro): ");
 				scanf("%c", &gen);
 				gen = toupper(gen);
 				if(gen != 'H' && gen != 'M' && gen != 'O')
-					printf("\n*Error - Caracter invalido. Ingrese de nuevo.*");
+					printf("\n*Error - Caracter inválido. Ingrese de nuevo.*");
 			} while(gen != 'H' && gen != 'M' && gen != 'O');
 
 			/*Dependiendo de la opcion elegida, almacenamos el genero en buffer*/
@@ -176,12 +176,12 @@ void solicitud_dato(int opc_dat, char *buffer){
 		case 6:
 			/*Limpiamos la consola y solicitamos la descripcion de los sintomas*/
 			fflush(stdin);
-			printf("\nIngrese una breve descripcion de sus sintomas: ");
+			printf("\nIngrese una breve descripción de sus sintomas: ");
 			scanf("%49[^\n]", buffer);
 			break;
 		case 7:
 			/*Solicitamos el numero de consultorio y validamos que exista*/
-			cons = minmaxInt("\nIngrese el numero de consultorio disponible donde sera atendido (1-30): ", 1, 30);
+			cons = minmaxInt("\nIngrese el número de consultorio disponible donde sera atendido (1-30): ", 1, 30);
 
 			/*Almacenamos el numero como cadena en buffer*/
 			sprintf(buffer, "%d", cons);
@@ -248,21 +248,21 @@ int mostrarDatos(int numR){
 	}
 
 	/*Imprimimos todo el registro del paciente*/
-	printf("\n\nNumero de registro: %d",numR);
+	printf("\n\nNúmero de registro: %d",numR);
 	fgets(buffer,sizeof(buffer),arch);
 	printf("\nTipo de servicio: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
 	printf("Nombre: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
-	printf("Direccion: %s",buffer);
+	printf("Dirección: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
 	printf("Edad: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
-	printf("Genero: %s",buffer);
+	printf("Género: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
-	printf("Descripcion de sintomas: %s",buffer);
+	printf("Descripción de sintomas: %s",buffer);
 	fgets(buffer,sizeof(buffer),arch);
-	printf("Numero de consultorio: %s",buffer);
+	printf("Número de consultorio: %s",buffer);
 
 	/*Cerramos el archivo y regresamos 1*/
 	fclose(arch);
@@ -338,21 +338,21 @@ int mostrarTodos(){
 
 		/*Imprimimos todos los datos del registro*/
 		printf("\n-------------------------------------------------------");
-		printf("\nNumero de registro: %d",numR);
+		printf("\nNúmero de registro: %d",numR);
 		fgets(buffer,sizeof(buffer),arch);
 		printf("\nTipo de servicio: %s",buffer);
 		fgets(buffer,sizeof(buffer),arch);
 		printf("Nombre: %s",buffer);
 		fgets(buffer,sizeof(buffer),arch);
-		printf("Direccion: %s",buffer);
+		printf("Dirección: %s",buffer);
 		fgets(buffer,sizeof(buffer),arch);
 		printf("Edad: %s",buffer);
 		fgets(buffer,sizeof(buffer),arch);
-		printf("Genero: %s",buffer);
+		printf("Género: %s",buffer);
 		fgets(buffer,sizeof(buffer),arch);
-		printf("Descripcion de sintomas: %s",buffer);
+		printf("Descripción de sintomas: %s",buffer);
 		fscanf(arch,"%[^\n]",buffer);
-		printf("Numero de consultorio: %s",buffer);
+		printf("Número de consultorio: %s",buffer);
 		printf("\n-------------------------------------------------------");
 
 		/*Aumentamos la variable contadora de registros activos*/
@@ -467,14 +467,14 @@ int esNum(char *buffer){
 }
 
 void menuEdicion(){
-	printf("\n--------- Submenu - Edicion ---------");
+	printf("\n--------- Submenú - Edicion ---------");
 	printf("\n|        1. Tipo de servicio        |");
 	printf("\n|             2. Nombre             |");
-	printf("\n|            3. Direccion           |");
+	printf("\n|            3. Dirección           |");
 	printf("\n|              4. Edad              |");
-	printf("\n|             5. Genero             |");
-	printf("\n|     6. Descripcion de sintomas    |");
-	printf("\n|      7. Numero de consultorio     |");
+	printf("\n|             5. Género             |");
+	printf("\n|     6. Descripción de sintomas    |");
+	printf("\n|      7. Número de consultorio     |");
 	printf("\n-------------------------------------");
 }
 
