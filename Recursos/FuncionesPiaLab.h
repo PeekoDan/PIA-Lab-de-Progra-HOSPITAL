@@ -117,13 +117,13 @@ void solicitud_dato(int opc_dat, char *buffer){
 			scanf("%49[^\n]",buffer);
 			break;
 		case 4:
-			/*Solicitamos la edad en anios y la validamos con minmaxInt*/
+			/*Solicitamos la edad en años y la validamos con minmaxInt*/
 			edad = minmaxInt("\nIngrese su edad (en años): ", 0, NOLIM);
 
 			/*Agregamos la edad en anios del paciente al buffer*/
 			if(edad){
 				sprintf(buffer, "%d", edad);
-				strcat(buffer, " anio(s) ");
+				strcat(buffer, " año(s) ");
 			}
 
 			/*Si el paciente es un bebe (0-2 anios), solicitamos sus meses y dias de edad*/
