@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
+#include <windows.h>
 
 /*Nuestras funciones creadas para usar aqui*/
 #include "FuncionesPiaLab.h"
@@ -55,21 +57,21 @@ int main(){
 				/*Damos de alta un paciente, si no hubo error se notifica el numero de registro asignado*/
 				if (alta()) {
 					printf("\n*Los datos del paciente fueron mostrados con exito.*");
-					printf("\n*Al paciente se le asigno el numero de registro %d.*", n);
+					printf("\n*Al paciente se le asignó el numero de registro %d.*", n);
 				}
 				break;
 			case 2:
 				/*Solicitamos el nombre o numero de registro del paciente*/
 				do {
 					fgetc(stdin);
-					printf("\nIngrese el nombre/numero de registro del paciente a buscar/editar: ");
+					printf("\nIngrese el nombre/número de registro del paciente a buscar/editar: ");
 					scanf("%[^\n]", buffer);
 					/*Determinamos si se leyo un numero o un nombre*/
 					numR = esNum(buffer);
 
 					/*Si se dio un numero invalido, lo notificamos y lo solicitamos de nuevo*/
 					if (numR == -1) {
-						printf("\n*Error - Numero de registro invalido. Ingrese de nuevo.*");
+						printf("\n*Error - Numero de registro inválido. Ingrese de nuevo.*");
 					}
 				} while (numR == -1);
 
@@ -77,21 +79,21 @@ int main(){
 				if (numR == 0) {
 					/*Si no se encontro al paciente, se notifica*/
 					if ((numR = buscarNombre(buffer)) == -1) {
-						printf("\n*No se encontro al paciente %s.*", buffer);
+						printf("\n*No se encontró al paciente %s.*", buffer);
 						break;
 					};
 				}
 
 				/*Si el registro esta activo se imprimen sus datos, si no, se notifica*/
 				if (mostrarDatos(numR) == -1) {
-					printf("\n*No se encontro al paciente %d.*", numR);
+					printf("\n*No se encontró al paciente %d.*", numR);
 					break;
 				}
 
 				/*Preguntamos si el usuario desea editar algun dato del registro*/
 				do {
 					fgetc(stdin);
-					printf("\nDesea editar algun dato? (S/N): ");
+					printf("\n¿Desea editar algun dato? (S/N): ");
 					scanf("%c", &dec);
 					if (dec != 'S' && dec != 'N') printf("\n*Error - Caracter invalido. Ingrese de nuevo.*");
 				} while (dec != 'S' && dec != 'N');
@@ -100,7 +102,7 @@ int main(){
 				if (dec == 'N') break;
 
 				/*Imprimimos un menu con las opciones de edicion de datos*/
-				printf("\nEn base al siguiente menu, elige la opcion a editar: ");
+				printf("\nEn base al siguiente menú, elige la opción a editar: ");
 				menuEdicion();
 
 				/*Solicitamos la opcion a editar y validamos que este en el menu*/
@@ -114,12 +116,12 @@ int main(){
 
 				/*Si el nuevo dato es exactamente igual al antiguo, se notifica*/
 				if ((res = editar(opc, numR, buffer)) == -1) {
-					printf("\n*No se realizo ningun cambio.*");
+					printf("\n*No se realizó ningún cambio.*");
 					break;
 				}
 
 				/*Si la edicion fue exitosa, se notifica*/
-				if (res) printf("\n*La informacion del paciente fue actualizada con exito.*");
+				if (res) printf("\n*La información del paciente fue actualizada con éxito.*");
 				break;
 			case 3:
 				/*Se muestran todos los registros activos, en caso de no haber ninguno activo se notifica*/
@@ -129,14 +131,14 @@ int main(){
 				/*Solicitamos el nombre o numero de registro del paciente*/
 				do {
 					fgetc(stdin);
-					printf("\nIngrese el nombre/numero de registro del paciente a dar de baja: ");
+					printf("\nIngrese el nombre/número de registro del paciente a dar de baja: ");
 					scanf("%[^\n]", buffer);
 					/*Determinamos si se leyo un numero o un nombre*/
 					numR = esNum(buffer);
 
 					/*Si se dio un numero invalido, lo notificamos y lo solicitamos de nuevo*/
 					if (numR == -1) {
-						printf("\n*Error - Numero de registro invalido. Ingrese de nuevo.*");
+						printf("\n*Error - Número de registro invalido. Ingrese de nuevo.*");
 					}
 				} while (numR == -1);
 
@@ -144,7 +146,7 @@ int main(){
 				if (numR == 0) {
 					/*Si no se encontro al paciente, se notifica*/
 					if ((numR = buscarNombre(buffer)) == -1) {
-						printf("\n*No se encontro al paciente %s.*", buffer);
+						printf("\n*No se encontró al paciente %s.*", buffer);
 						break;
 					};
 				}
@@ -152,9 +154,9 @@ int main(){
 				/*Solicitamos una confirmacion para dar de baja al paciente*/
 				do {
 					fgetc(stdin);
-					printf("\nEsta seguro que desea dar de baja al paciente %s? (S/N): ", buffer);
+					printf("\n¿Está seguro que desea dar de baja al paciente %s? (S/N): ", buffer);
 					scanf("%c", &dec);
-					if (dec != 'S' && dec != 'N') printf("\n*Error - Caracter invalido. Ingrese de nuevo.*");
+					if (dec != 'S' && dec != 'N') printf("\n*Error - Caracter inválido. Ingrese de nuevo.*");
 				} while (dec != 'S' && dec != 'N');
 
 				/*Si no se desea dar de baja al paciente, regresamos al menu principal*/
