@@ -52,3 +52,6 @@ void menuEdicion();
 
 /* Función que verifica si el directorio actual es "Recursos" y, de ser así, sube un nivel */
 void checarEnRecursos();
+
+/* Función que imprime datos que tienen ñ en forma ni tal que se presentan como ñ al usuario */
+int printstrEnie(char str[]);
