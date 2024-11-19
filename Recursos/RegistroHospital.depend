@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1731012866 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\recursosproyecto.rc
+
+1731012847 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesPiaLab.h"
+
+1731012948 c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main\pia-lab-de-progra-hospital-main\recursos\funcionespialab.h
+
+1731075080 source:c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\recursosproyecto.rc
+
+1731075579 source:c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesPiaLab.h"
+
+1731075579 c:\users\dell\documents\2177559\pia lab\pia_hospitalcbp\recursos\funcionespialab.h
+
+1731970281 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-cbpesp1.1\pia-lab-de-progra-hospital-cbpesp1.1\recursos\recursosproyecto.rc
+
+1731981525 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-cbpesp1.1\pia-lab-de-progra-hospital-cbpesp1.1\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<windows.h>
+	"FuncionesPiaLab.c"
+
+1731971395 c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-cbpesp1.1\pia-lab-de-progra-hospital-cbpesp1.1\recursos\funcionespialab.h
+
+1731984775 c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-cbpesp1.1\pia-lab-de-progra-hospital-cbpesp1.1\recursos\funcionespialab.c
+
+1731990210 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main (1)\pia-lab-de-progra-hospital-main\recursos\basededatos_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<windows.h>
+	"FuncionesPiaLab.c"
+
+1731990211 c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main (1)\pia-lab-de-progra-hospital-main\recursos\funcionespialab.c
+
+1731987899 source:c:\users\administrador\documents\! universidad !\3-programación estructurada\pia lab hospital\pia-lab-de-progra-hospital-main (1)\pia-lab-de-progra-hospital-main\recursos\recursosproyecto.rc
+
