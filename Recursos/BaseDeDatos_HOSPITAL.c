@@ -73,7 +73,7 @@ int main(){
 			case 1:
 				/*Damos de alta un paciente, si no hubo error se notifica el numero de registro asignado*/
 				if(alta()) {
-					printf("\n*Los datos del paciente fueron mostrados con éxito.*");
+					printf("\n*Los datos del paciente fueron guardados con éxito.*");
 					printf("\n*Al paciente se le asignó el número de registro %d.*",n);
 				}
 				break;
