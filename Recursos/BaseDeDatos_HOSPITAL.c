@@ -189,7 +189,7 @@ int main(){
 				}
 
 				/*Si se dio de baja exitosamente, se notifica*/
-				if(res) printf("\n*El paciente %s fue dado de baja con éxito.*",buffer);
+				if(res) printf("\n*El paciente fue dado de baja con éxito.*",buffer);
 				break;
 		}
 		/*Pausamos el programa y solicitamos cualquier tecla para continuar*/
