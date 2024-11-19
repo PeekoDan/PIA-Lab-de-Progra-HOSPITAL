@@ -171,7 +171,7 @@ int main(){
 
 				/*Solicitamos una confirmacion para dar de baja al paciente*/
 				do{
-					printf("\nEstá seguro que desea dar de baja al paciente %s? (S/N): ",buffer);
+					printf("\nEstá seguro que desea dar de baja al paciente? (S/N): ",buffer);
 					scanf("%c",&dec);
 					if(dec != 'S' && dec != 'N' && dec!= 's' && dec!= 'n') printf("\n*Error - Caracter inválido. Ingrese de nuevo.*");
 				}while(dec != 'S' && dec != 'N' && dec!= 's' && dec!= 'n');
@@ -180,8 +180,6 @@ int main(){
 				if(dec == 'N' || dec == 'n') break;
 
 				/*Si el registro ya estaba dado de baja, lo notificamos*/
-				printf("entrando a dar de baja\n");
-				printf("numR = %d",numR);
 				if((res = baja(numR)) == -1) {
 					printf("\n*El paciente %s ya fue dado de baja anteriormente.*",buffer);
 					break;
